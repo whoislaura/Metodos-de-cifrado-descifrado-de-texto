@@ -5,5 +5,6 @@ public class Main {
         System.out.println("Proyecto 27: Cifrado Sustitución y Vigenère");
 
         controlador.iniciar();
+
     }
 }

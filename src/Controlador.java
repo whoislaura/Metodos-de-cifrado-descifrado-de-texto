@@ -11,26 +11,30 @@ public class Controlador {
 
         do{
             mostrarMenu();
+            System.out.print("Elige una opción: ");
             opcion = in.nextLine();
             elegirOpcion(enteroValido(opcion));
         }while(!opcion.equals("8"));
     }
 
     private void mostrarMenu(){
-        System.out.println("1. Configurar clave Vigenere.");
+        System.out.println("1. Configurar clave Vigenère.");
         System.out.println("2. Cifrar texto (Sustitucion).");
         System.out.println("3. Descifrar texto (Sustitucion).");
-        System.out.println("4. Cifrar texto (Vigenere).");
-        System.out.println("5. Descifrar texto (Vigenere).");
+        System.out.println("4. Cifrar texto (Vigenère).");
+        System.out.println("5. Descifrar texto (Vigenère).");
         System.out.println("6. Mostrar mapa actual.");
         System.out.println("7. Mostrar clave actual.");
         System.out.println("8. Salir.");
     }
 
     private int enteroValido(String opcion){
-        //validar el entero
 
-        return Integer.parseInt(opcion);
+        for(char i = '1'; i<='8'; i++){
+            if(opcion.charAt(0) == i) return Integer.parseInt(opcion);
+        }
+
+        return -1;
     }
 
     private void elegirOpcion(int opcion){
@@ -42,13 +46,14 @@ public class Controlador {
             case 5 -> descifrarVig();
             case 6 -> mostrarMapa();
             case 7 -> mostrarClave();
-            case 8 -> System.out.println("saliendo...");
-            default -> System.out.println("opcion invalida");
+            case 8 -> System.out.println(">Saliendo...");
+            default -> System.out.println(">ERROR. Opción no válida.");
         }
     }
 
+    //metodos del menu
     private void configClave(){
-        System.out.print(">Ingrese la clave Vigenere: ");
+        System.out.print(">Ingrese la clave Vigenère: ");
         String clave = in.nextLine().toUpperCase();
         config.setClaveVigenere(clave);
     }
@@ -67,7 +72,7 @@ public class Controlador {
 
     private void cifrarVig(){
         if(config.getClave() == null) {
-            System.out.println(">No se ha establecido una clave.");
+            System.out.println(">ERROR. No se ha establecido una clave.");
             return;
         }
         System.out.print(">Texto a cifrar: ");
@@ -77,7 +82,7 @@ public class Controlador {
 
     private void descifrarVig(){
         if(config.getClave() == null) {
-            System.out.println(">No se ha establecido una clave.");
+            System.out.println(">ERROR. No se ha establecido una clave.");
             return;
         }
         System.out.print(">Texto a descifrar: ");
@@ -92,6 +97,6 @@ public class Controlador {
 
     private void mostrarClave(){
         String clave = config.getClave();
-        System.out.println(clave == null ? ">No se ha establecido una clave." : ">Clave Vigenere: " + clave);
+        System.out.println(clave == null ? ">No se ha establecido una clave." : ">Clave Vigenère: " + clave);
     }
 }
