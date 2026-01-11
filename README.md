@@ -13,7 +13,7 @@ Mayúsculas
 
 Minúsculas
 
-Caracteres especiales (se mantienen sin cambios)
+Caracteres especiales
 
 -Validación de clave Vigenère.
 
