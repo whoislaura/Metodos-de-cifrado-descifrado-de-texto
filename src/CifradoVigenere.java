@@ -49,12 +49,12 @@ public class CifradoVigenere {
         if(Character.isUpperCase(a)){
             int ind = buscarind(letrasMayus, a);
             int ind2 = buscarind(letrasMayus, clave.charAt(len));
-            return ind>=0 && ind2>=0 ? (ind>ind2 ? letrasMayus.charAt((ind-ind2)%letrasMayus.length()) : letrasMayus.charAt(((ind+27)-ind2)%letrasMayus.length())) : a;
+            return ind>=0 && ind2>=0 ? (ind>ind2 ? letrasMayus.charAt((ind-ind2)%letrasMayus.length()) : letrasMayus.charAt(((ind+letrasMayus.length())-ind2)%letrasMayus.length())) : a;
         }
         else if(Character.isLowerCase(a)){
             int ind = buscarind(letrasMinus, a);
             int ind2 = buscarind(letrasMayus, clave.charAt(len));
-            return ind>=0 && ind2>=0 ? (ind>ind2 ? letrasMinus.charAt((ind-ind2)%letrasMinus.length()) : letrasMinus.charAt(((ind+27)-ind2)%letrasMinus.length())) : a;
+            return ind>=0 && ind2>=0 ? (ind>ind2 ? letrasMinus.charAt((ind-ind2)%letrasMinus.length()) : letrasMinus.charAt(((ind+letrasMayus.length())-ind2)%letrasMinus.length())) : a;
         }
         else return a;
     }

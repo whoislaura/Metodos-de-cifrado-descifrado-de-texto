@@ -29,7 +29,7 @@ public class Controlador {
     }
 
     private int enteroValido(String opcion){
-
+        if(opcion == null || opcion.isEmpty()) return -1;
         for(char i = '1'; i<='8'; i++){
             if(opcion.charAt(0) == i) return Integer.parseInt(opcion);
         }

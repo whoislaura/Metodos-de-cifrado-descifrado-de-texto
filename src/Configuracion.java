@@ -1,8 +1,8 @@
 public class Configuracion{
-    private static final String letrasMayusculas = "ABCDEFGHIJKLMÑNOPQRSTUVWXYZ";
-    private static final String letrasMinusculas = "abcdefghijklmñnopqrstuvwxyz";
-    private static final String mapaMinusculas = "efghijklmñnopqrstuvwxyzabcd";
-    private static final String mapaMayusculas = "EFGHIJKLMÑNOPQRSTUVWXYZABCD";
+    private static final String letrasMayusculas = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+    private static final String letrasMinusculas = "abcdefghijklmnñopqrstuvwxyz";
+    private static final String mapaMinusculas = "efghijklmnñopqrstuvwxyzabcd";
+    private static final String mapaMayusculas = "EFGHIJKLMNÑOPQRSTUVWXYZABCD";
     private String claveVigenere;
 
     public void setClaveVigenere(String clave){
